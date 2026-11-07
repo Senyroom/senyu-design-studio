@@ -7,9 +7,17 @@
 ![MySQL 8](https://img.shields.io/badge/MySQL-8-4479a1)
 ![Redis 7.4](https://img.shields.io/badge/Redis-7.4-DC382D)
 
-[安装教程](docs/安装教程.md) · [后台使用](docs/后台使用教程.md) · [Docker / 宝塔部署](docs/部署教程.md) · [架构与接口](docs/架构与接口.md) · [素材与许可](THIRD_PARTY_NOTICES.md)
+[在线演示](https://www.lsenyu.cn/) · [安装教程](docs/安装教程.md) · [后台使用](docs/后台使用教程.md) · [Docker / 宝塔部署](docs/部署教程.md) · [架构与接口](docs/架构与接口.md) · [素材与许可](THIRD_PARTY_NOTICES.md)
 
-![首页预览](docs/screenshots/home.png)
+## 在线演示
+
+**演示站：[www.lsenyu.cn](https://www.lsenyu.cn/)**，即森语设计所当前的线上站点。可直接体验首页、文章文件夹、课程打字机和翻面名片。
+
+[个人介绍](https://www.lsenyu.cn/#about) · [文章与玻璃文件夹](https://www.lsenyu.cn/#articles) · [课程与打字机](https://www.lsenyu.cn/#courses) · [联系与互动名片](https://www.lsenyu.cn/#contact)
+
+下方前台截图直接采自该线上站点（2026-11-07），展示实际页面效果。仓库的前台布局、样式和交互实现与该项目一致；首次安装使用独立示例文案和插画，站点名称、个人形象、文章、课程及联系方式可在后台替换为自己的内容。线上后台用于实际内容管理，不提供公开共享账号。
+
+![线上演示：首页](docs/screenshots/live-home.jpg)
 
 ## 这个项目能做什么
 
@@ -33,15 +41,17 @@
 - 可拖动的 3D 挂卡，点击微信翻面；背面图片等比完整显示。
 - 手机与平板断点、键盘聚焦与减少动态效果偏好支持；后台以桌面管理为主。
 
-![文章文件夹](docs/screenshots/articles.png)
+![线上演示：文章文件夹](docs/screenshots/live-articles.jpg)
 
-![课程打字机](docs/screenshots/course.png)
+![线上演示：课程打字机](docs/screenshots/live-course.jpg)
+
+以下为独立安装环境的后台截图：
 
 ![Arco 内容后台](docs/screenshots/admin.png)
 
 ![自定义身份标签](docs/screenshots/profile.png)
 
-> 上图来自本仓库的独立示例环境。默认内容为 9 篇原创演示文章、通用身份标签与原创示例插画。名片背面是占位图，未提供任何个人微信二维码或正式站数据。
+> 线上截图用于展示正式站效果；后台截图来自本仓库的独立示例环境。默认安装内容为 9 篇原创演示文章、通用身份标签与原创示例插画，名片背面为占位图。可查看[默认安装首页](docs/screenshots/home.png)、[示例文章模块](docs/screenshots/articles.png)和[示例课程模块](docs/screenshots/course.png)。仓库不包含生产数据库、凭据或个人微信二维码。
 
 ## 技术栈
 

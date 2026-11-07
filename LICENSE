@@ -31,5 +31,7 @@ demo illustrations. It does not replace third-party licenses:
 - seed-assets/official-*.svg and derived brand icons: Simple Icons CC0-1.0;
   brand names and trademarks remain the property of their respective owners.
 - Installed dependencies retain their respective licenses.
+- docs/screenshots/live-*.jpg show the live website for demonstration only;
+  depicted branding, artwork and third-party content retain their rights.
 
 See THIRD_PARTY_NOTICES.md before redistributing this application.
