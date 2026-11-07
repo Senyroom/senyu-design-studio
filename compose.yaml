@@ -1,0 +1,113 @@
+name: vibe-personal-site
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: personal_site
+      MYSQL_USER: personal_site
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?请先配置部署环境文件}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?请设置数据库 root 密码}
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          "MYSQL_PWD=$$MYSQL_PASSWORD mysql -u$$MYSQL_USER -D$$MYSQL_DATABASE -e 'SELECT 1'",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    command:
+      [
+        'redis-server',
+        '--save',
+        '',
+        '--appendonly',
+        'no',
+        '--maxmemory',
+        '128mb',
+        '--maxmemory-policy',
+        'allkeys-lru',
+      ]
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+  api:
+    image: vibe-personal-site:local
+    build:
+      context: .
+      target: runtime
+    restart: unless-stopped
+    environment: &app-env
+      DATABASE_URL: mysql://personal_site:${MYSQL_PASSWORD}@mysql:3306/personal_site
+      REDIS_URL: redis://redis:6379/0
+      REDIS_KEY_PREFIX: lsenyu:public
+      MEDIA_ROOT: /data/media
+      HOST: 0.0.0.0
+      PORT: 4000
+      WEB_ORIGIN: ${SITE_URL:-http://localhost:8080}
+      ADMIN_ORIGIN: ${SITE_URL:-http://localhost:8080}
+      WEB_INTERNAL_URL: http://web:3000
+      API_INTERNAL_URL: http://api:4000
+      NEXT_PUBLIC_SITE_URL: ${SITE_URL:-http://localhost:8080}
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:?请生成发布密钥}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?请设置初始站长密码}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      NEXT_TELEMETRY_DISABLED: 1
+    volumes:
+      - media_data:/data/media
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:4000/api/v1/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+  web:
+    image: vibe-personal-site:local
+    restart: unless-stopped
+    command: ['pnpm', '--dir', 'apps/web', 'start']
+    environment: *app-env
+    depends_on:
+      api:
+        condition: service_healthy
+  gateway:
+    image: vibe-personal-gateway:local
+    build:
+      context: .
+      target: gateway
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:8080:80'
+    depends_on: [api, web]
+  init:
+    image: vibe-personal-site:local
+    profiles: [tools]
+    command: ['sh', '-c', 'pnpm db:migrate && pnpm db:seed']
+    environment: *app-env
+    volumes:
+      - media_data:/data/media
+    depends_on:
+      mysql:
+        condition: service_healthy
+volumes:
+  mysql_data:
+  media_data:

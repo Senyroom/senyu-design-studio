@@ -1,0 +1,5 @@
+# Install Caddy on the host, set the real domain, and point DNS at the server.
+your-domain.example {
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:8080
+}

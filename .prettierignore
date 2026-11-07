@@ -1,0 +1,9 @@
+node_modules
+.local
+.env
+pnpm-lock.yaml
+apps/web/components/reactbits
+**/dist
+**/.next
+docs/reference
+seed-assets

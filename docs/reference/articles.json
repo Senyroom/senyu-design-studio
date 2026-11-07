@@ -1,0 +1,461 @@
+[
+  {
+    "category": "AI入门知识",
+    "title": "理解 AI 辅助设计的工作方式",
+    "sort": 0,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "理解 AI 辅助设计的工作方式"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI入门知识",
+    "title": "写好你的第一份需求说明",
+    "sort": 1,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "写好你的第一份需求说明"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI入门知识",
+    "title": "如何整理可复用的提示词",
+    "sort": 2,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "如何整理可复用的提示词"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI工具指南",
+    "title": "搭建你的本地开发环境",
+    "sort": 3,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "搭建你的本地开发环境"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI工具指南",
+    "title": "建立设计素材与媒体库",
+    "sort": 4,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "建立设计素材与媒体库"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI工具指南",
+    "title": "从草稿预览到正式发布",
+    "sort": 5,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "从草稿预览到正式发布"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI设计实战",
+    "title": "设计一个有个性的个人首页",
+    "sort": 6,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "设计一个有个性的个人首页"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI设计实战",
+    "title": "让文章分类和展示保持一致",
+    "sort": 7,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "让文章分类和展示保持一致"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "category": "AI设计实战",
+    "title": "为个人网站配置上线流程",
+    "sort": 8,
+    "url": "",
+    "summary": "开源示例内容，可在后台修改、预览和发布。",
+    "body": {
+      "type": "doc",
+      "content": [
+        {
+          "type": "heading",
+          "attrs": {
+            "level": 2
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "为个人网站配置上线流程"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "欢迎使用森语设计所。这是一篇随开源仓库提供的原创演示文章，用于体验站内阅读、富文本编辑、草稿与发布流程。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "在后台进入「探索记录」，修改标题、摘要和正文后保存草稿。检查预览效果，再发布内容；前台文件夹、文章列表与星球展示将使用同一个公开版本。"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "请将演示文章替换成你自己的作品、学习笔记或项目记录。更多安装和使用说明见仓库 docs 目录。"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

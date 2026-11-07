@@ -1,0 +1,13 @@
+SourceHanSansCN-VF.woff2
+© 2014-2025 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+
+SmileySans.woff2
+Copyright © 2022–2024 atelierAnchor. All rights reserved.
+
+Inter.ttf
+Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
+
+All three font files identify SIL Open Font License Version 1.1 in their
+embedded name tables. See OFL-1.1.txt for the complete license.
+The *-embedded-license.json files preserve the copyright and license
+records extracted directly from the distributed font binaries.

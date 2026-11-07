@@ -1,0 +1,59 @@
+name: Verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build-and-integration:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: personal_site
+          MYSQL_USER: personal_site
+          MYSQL_PASSWORD: integration-only
+          MYSQL_ROOT_PASSWORD: integration-root-only
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1"
+          --health-interval=5s --health-timeout=5s --health-retries=30
+      redis:
+        image: redis:7.4-alpine
+        ports: ['6379:6379']
+        options: >-
+          --health-cmd="redis-cli ping"
+          --health-interval=5s --health-timeout=3s --health-retries=20
+    env:
+      DATABASE_URL: mysql://personal_site:integration-only@127.0.0.1:3306/personal_site
+      REDIS_URL: redis://127.0.0.1:6379/0
+      REDIS_KEY_PREFIX: senyu:ci:public
+      MEDIA_ROOT: /tmp/vibe-site-media
+      REVALIDATE_SECRET: integration-only-secret-not-for-deployment
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: integration-only-password
+      WEB_ORIGIN: http://localhost:3000
+      ADMIN_ORIGIN: http://localhost:5173
+      API_INTERNAL_URL: http://127.0.0.1:4000
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+      NEXT_TELEMETRY_DISABLED: 1
+      CI: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm db:generate && pnpm db:migrate && pnpm db:seed
+      - run: pnpm typecheck && pnpm build
+      - name: Start services and test
+        run: |
+          node apps/api/dist/main.js > /tmp/site-api.log 2>&1 &
+          pnpm --dir apps/web start > /tmp/site-web.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://localhost:3000/ > /dev/null && break || sleep 1; done
+          pnpm test
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: service-logs
+          path: /tmp/site-*.log

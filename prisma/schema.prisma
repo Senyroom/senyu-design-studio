@@ -1,0 +1,101 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+}
+model PublicContentRevision {
+  id String @id @db.VarChar(30)
+  revision Int @default(1)
+  updatedAt DateTime @updatedAt
+}
+model User {
+  id String @id @default(cuid())
+  username String @unique @db.VarChar(80)
+  passwordHash String @db.VarChar(255)
+  role String @default("ADMIN") @db.VarChar(20)
+  createdAt DateTime @default(now())
+  sessions Session[]
+}
+model Session {
+  id String @id @default(cuid())
+  tokenHash String @unique @db.VarChar(64)
+  csrf String @db.VarChar(64)
+  userId String
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  expiresAt DateTime
+  @@index([expiresAt])
+}
+model Category {
+  id String @id @default(cuid())
+  name String @db.VarChar(120)
+  slug String @unique @db.VarChar(120)
+  description String @db.VarChar(500)
+  color String @default("#2134ff") @db.VarChar(20)
+  label String @db.VarChar(120)
+  sort Int @default(0)
+  articles Article[]
+}
+model Article {
+  id String @id @default(cuid())
+  slug String @unique @db.VarChar(180)
+  categoryId String
+  category Category @relation(fields:[categoryId],references:[id])
+  draft Json
+  published Json?
+  status String @default("DRAFT") @db.VarChar(20)
+  sort Int @default(0)
+  revision Int @default(1)
+  publishedAt DateTime?
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  versions ContentVersion[]
+  @@index([status,categoryId,sort])
+}
+model Setting {
+  key String @id @db.VarChar(60)
+  draft Json
+  published Json?
+  revision Int @default(1)
+  updatedAt DateTime @updatedAt
+}
+model ContentVersion {
+  id String @id @default(cuid())
+  articleId String?
+  article Article? @relation(fields:[articleId],references:[id],onDelete:Cascade)
+  settingKey String? @db.VarChar(60)
+  snapshot Json
+  revision Int
+  createdAt DateTime @default(now())
+  @@index([articleId,createdAt])
+  @@index([settingKey,createdAt])
+}
+model Media {
+  id String @id @default(cuid())
+  filename String @db.VarChar(255)
+  key String @unique @db.VarChar(255)
+  mime String @db.VarChar(100)
+  size Int
+  width Int?
+  height Int?
+  alt String @default("") @db.VarChar(500)
+  variants Json?
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+}
+model PublishJob {
+  id String @id @default(cuid())
+  status String @default("PENDING") @db.VarChar(20)
+  attempts Int @default(0)
+  error String? @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+model AuditLog {
+  id String @id @default(cuid())
+  actor String @db.VarChar(80)
+  action String @db.VarChar(80)
+  target String @db.VarChar(180)
+  createdAt DateTime @default(now())
+}
